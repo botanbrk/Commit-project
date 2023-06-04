@@ -1,0 +1,174 @@
+/* varsayilan olarak gelen ozellikleri sifirlama*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* arka plan alanina resim verip sabitledik ve icindeki elemanlar uzerinde kayiyor*/
+body{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(images/banner.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+
+/* Container / ana tasiyici ozellikleri*/
+.container{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box; /* boyutlandirmayi tamamen bize birakir*/
+    padding: 0 10%;
+    color: white;
+}
+
+/* header navbar alani ile menu ve logo ozellestir*/
+.navbar{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    height: 100px;
+    cursor: pointer;
+}
+
+.bi{
+    font-size: 50px;
+    cursor: pointer;
+    margin-right: 30px;
+    display: none;
+}
+
+.bi:hover{
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: red;
+    bottom: -4px;
+    left: 0;
+    position: absolute;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+    transition: 1s;
+}
+
+
+/* Satirlama one cikan icerikleri yerlestirme */
+.row{
+    display: flex;
+    align-items: center;
+    height: 90%;
+    overflow: scroll;
+}
+
+
+.col{
+    flex-basis: 50%;
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 120px;
+}
+
+p{
+    font-size: 20px;
+    line-height: 25px;
+    max-width: 500px;
+}
+
+button{
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: solid red 2px;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: white;
+
+}
+
+button:hover{
+    background: linear-gradient(rgb(247, 7, 7),rgb(228, 70, 70));
+    border: none;
+    font-size: 16px;
+    transition: .3s;
+    font-weight: bold;
+}
+
+/* card alanlari boyutlandirma ve animasyon*/
+.card{
+    width: 250px;
+    height: 300px;
+    background-color: wheat;
+    display: inline-block;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(images/istanbul.jpeg);
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card p, h5{
+    text-shadow: 0 0 10px black;
+    text-indent: 10px;
+    padding: 2px;
+
+}
+
+/* responsive yapmak icin*/
+@media (max-width:768px) {
+    nav{
+        display: none;
+    }
+    .bi{
+        display: block;
+    }
+    .row{
+        display: block;
+    }
+    .card{
+        width: 200px;
+    }
+    .row .col p{
+        font-size: 15px;
+        font-style: italic;
+    }
+}
